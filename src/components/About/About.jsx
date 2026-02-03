@@ -33,6 +33,8 @@ const About = () => {
             for industrial, commercial, and residential clients across KwaZulu-Natal.
           </p>
 
+          {/* made space */}
+
           <p className="about-mission">
             Our mission is to deliver <strong>durable, waterproof, and long-lasting </strong> 
             protection solutions that safeguard your assets, reduce maintenance costs, 
