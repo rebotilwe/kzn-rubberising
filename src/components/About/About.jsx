@@ -29,12 +29,12 @@ const About = () => {
             KZN Rubberising is a professional service provider specializing in 
             <span className="highlight-text"> bin-lining</span>, 
             <span className="highlight-text"> rubberising</span>, and 
-            <span className="highlight-text"> surface protection solutions</span> 
+            <span className="highlight-text"> surface protection solutions </span> 
             for industrial, commercial, and residential clients across KwaZulu-Natal.
           </p>
 
           <p className="about-mission">
-            Our mission is to deliver <strong>durable, waterproof, and long-lasting</strong> 
+            Our mission is to deliver <strong>durable, waterproof, and long-lasting </strong> 
             protection solutions that safeguard your assets, reduce maintenance costs, 
             and extend operational lifespan.
           </p>
