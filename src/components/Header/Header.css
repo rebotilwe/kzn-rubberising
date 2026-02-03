@@ -1,0 +1,379 @@
+/* Header.css - Improved Version */
+:root {
+  --dark-blue: #1a365d;
+  --light-blue: #4299e1;
+  --red: #e53e3e;
+  --white: #ffffff;
+  --whatsapp-green: #25d366;
+  --whatsapp-dark: #128c7e;
+}
+
+.header {
+  background: rgba(26, 54, 93, 0.98);
+  backdrop-filter: blur(10px);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  border-bottom: 3px solid var(--red);
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px;
+}
+
+/* Logo */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  transition: transform 0.3s;
+}
+
+.logo:hover {
+  transform: scale(1.05);
+}
+
+.logo-icon {
+  font-size: 32px;
+  animation: float 3s ease-in-out infinite;
+}
+
+.logo-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+
+.logo-kzn {
+  font-weight: 900;
+  color: white;
+  font-size: 24px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.logo-rubberising {
+  font-weight: 700;
+  color: var(--red);
+  font-size: 18px;
+  letter-spacing: 0.5px;
+}
+
+/* Desktop Navigation */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.nav-link {
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.3s;
+  position: relative;
+  padding: 5px 0;
+}
+
+.nav-link:hover {
+  color: var(--red);
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--red);
+  transition: width 0.3s;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* Contact Buttons Container */
+.contact-buttons {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+/* Phone Button */
+.nav-phone {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(66, 153, 225, 0.15);
+  color: white;
+  text-decoration: none;
+  padding: 8px 16px;
+  border-radius: 25px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  border: 1px solid rgba(66, 153, 225, 0.3);
+  transition: all 0.3s;
+}
+
+.nav-phone:hover {
+  background: rgba(66, 153, 225, 0.25);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(66, 153, 225, 0.2);
+}
+
+/* WhatsApp Button */
+.nav-whatsapp {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--whatsapp-green);
+  color: white;
+  text-decoration: none;
+  padding: 8px 16px;
+  border-radius: 25px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  border: none;
+  transition: all 0.3s;
+  animation: pulse-whatsapp 2s infinite;
+}
+
+@keyframes pulse-whatsapp {
+  0%, 100% { 
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.4); 
+  }
+  50% { 
+    box-shadow: 0 0 0 8px rgba(37, 211, 102, 0); 
+  }
+}
+
+.nav-whatsapp:hover {
+  background: var(--whatsapp-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(37, 211, 102, 0.3);
+}
+
+/* Button Icons */
+.btn-icon {
+  font-size: 1.1rem;
+}
+
+.btn-text {
+  white-space: nowrap;
+}
+
+/* Get Quote Button */
+.btn-nav {
+  background: var(--red);
+  color: white;
+  padding: 10px 24px;
+  border-radius: 25px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.3s;
+  border: 2px solid var(--red);
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.btn-nav:hover {
+  background: transparent;
+  color: var(--red);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(229, 62, 62, 0.3);
+}
+
+/* Mobile Menu Button */
+.mobile-menu-btn {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  z-index: 1001;
+}
+
+.mobile-menu-btn span {
+  width: 25px;
+  height: 3px;
+  background: white;
+  border-radius: 2px;
+  transition: 0.3s;
+}
+
+.mobile-menu-btn.active span:nth-child(1) {
+  transform: rotate(45deg) translate(6px, 6px);
+}
+
+.mobile-menu-btn.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.mobile-menu-btn.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* Mobile Menu */
+.mobile-menu {
+  display: none;
+  position: fixed;
+  top: 70px;
+  left: 0;
+  right: 0;
+  background: var(--dark-blue);
+  padding: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  transform: translateY(-100%);
+  opacity: 0;
+  transition: all 0.3s ease;
+  z-index: 999;
+}
+
+.mobile-menu.active {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.mobile-link {
+  display: block;
+  color: white;
+  text-decoration: none;
+  padding: 15px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s;
+}
+
+.mobile-link:hover {
+  color: var(--red);
+  background: rgba(255, 255, 255, 0.05);
+  padding-left: 25px;
+}
+
+.mobile-contact-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 20px;
+  padding: 20px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.mobile-phone,
+.mobile-whatsapp,
+.mobile-quote {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 12px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.3s;
+}
+
+.mobile-phone {
+  background: rgba(66, 153, 225, 0.2);
+  color: white;
+  border: 1px solid rgba(66, 153, 225, 0.3);
+}
+
+.mobile-whatsapp {
+  background: var(--whatsapp-green);
+  color: white;
+}
+
+.mobile-quote {
+  background: var(--red);
+  color: white;
+}
+
+.mobile-icon {
+  font-size: 1.2rem;
+}
+
+/* Animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .nav-links {
+    gap: 25px;
+  }
+  
+  .contact-buttons {
+    gap: 10px;
+  }
+  
+  .nav-phone,
+  .nav-whatsapp {
+    padding: 8px 12px;
+    font-size: 0.85rem;
+  }
+  
+  .btn-nav {
+    padding: 8px 20px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+  
+  .mobile-menu-btn {
+    display: flex;
+  }
+  
+  .mobile-menu {
+    display: block;
+  }
+  
+  .logo-kzn {
+    font-size: 20px;
+  }
+  
+  .logo-rubberising {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-container {
+    padding: 0 15px;
+    height: 65px;
+  }
+  
+  .logo-icon {
+    font-size: 28px;
+  }
+  
+  .logo-kzn {
+    font-size: 18px;
+  }
+  
+  .logo-rubberising {
+    font-size: 14px;
+  }
+}

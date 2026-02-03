@@ -1,0 +1,146 @@
+.about {
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  padding: 60px 20px; /* reduced from 100px */
+  position: relative;
+  overflow: hidden;
+}
+
+.about-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px; /* slightly smaller gap */
+  align-items: start;
+}
+
+/* Section header */
+.section-subtitle {
+  font-size: 0.85rem; /* smaller */
+  padding: 4px 12px;
+}
+
+.about-content h2 {
+  font-size: 2.2rem; /* smaller title */
+  margin-bottom: 12px;
+}
+
+.about-description,
+.about-mission {
+  font-size: 1rem; /* slightly smaller text */
+  line-height: 1.6;
+}
+
+.about-mission {
+  margin-bottom: 30px;
+  padding-left: 15px;
+}
+
+/* Features */
+.about-features {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px; /* smaller gap */
+}
+
+.feature-item h4 {
+  font-size: 1rem;
+}
+.feature-item p {
+  font-size: 0.85rem;
+  line-height: 1.4;
+}
+.feature-icon {
+  font-size: 1.5rem;
+}
+
+/* Stats section */
+.about-stats {
+  background: white;
+  padding: 25px 20px; /* smaller padding */
+  border-radius: 15px;
+}
+
+.stats-header h3 {
+  font-size: 1.8rem;
+}
+.stats-header p {
+  font-size: 0.9rem;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.stat-box {
+  padding: 20px 15px; /* reduced */
+}
+.stat-icon {
+  font-size: 2rem;
+}
+.stat-number {
+  font-size: 2.2rem;
+}
+.stat-label {
+  font-size: 0.85rem;
+}
+
+/* CTA */
+.stats-cta {
+  padding-top: 20px;
+}
+.cta-text {
+  font-size: 1rem;
+}
+.btn-outline {
+  padding: 10px 25px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+}
+
+/* Animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .about-container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .about-features {
+    grid-template-columns: 1fr;
+  }
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .about {
+    padding: 50px 20px;
+  }
+  .about-content h2 {
+    font-size: 2rem;
+  }
+  .stat-number {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .about {
+    padding: 40px 15px;
+  }
+  .about-content h2 {
+    font-size: 1.6rem;
+  }
+  .about-description,
+  .about-mission {
+    font-size: 0.95rem;
+  }
+}
