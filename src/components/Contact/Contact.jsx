@@ -97,8 +97,8 @@ const handleSubmit = async (e) => {
               <div className="detail-icon">📞</div>
               <div>
                 <h4>Call Us</h4>
-                <a href="tel:+27311234567" className="detail-link">
-                  +27 31 123 4567
+                <a href="tel:+27683035963" className="detail-link">
+                  +27 68 303 5963
                 </a>
               </div>
             </div>
@@ -139,8 +139,8 @@ const handleSubmit = async (e) => {
             <p className="emergency-text">
               We offer 24/7 emergency services for urgent protection needs.
             </p>
-            <a href="tel:+27311234567" className="btn-emergency">
-              📞 Call Now: +27 31 123 4567
+            <a href="tel:+27683035963" className="btn-emergency">
+              📞 Call Now:  +27 68 303 5963
             </a>
           </div>
         </motion.div>

@@ -7,7 +7,7 @@ const Header = () => {
 
   // WhatsApp message template
   const whatsappMessage = `Hello KZN Rubberising! I'm interested in your services. Please contact me.`;
-  const whatsappLink = `https://wa.me/27311234567?text=${encodeURIComponent(whatsappMessage)}`;
+  const whatsappLink = `https://wa.me/27683035963?text=${encodeURIComponent(whatsappMessage)}`;
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -35,7 +35,7 @@ const Header = () => {
           <div className="contact-buttons">
             {/* Phone */}
             <a 
-              href="tel:+27311234567" 
+              href="tel:+27683035963" 
               className="nav-phone"
               aria-label="Call us"
             >
@@ -81,7 +81,7 @@ const Header = () => {
           
           <div className="mobile-contact-buttons">
             <a 
-              href="tel:+27311234567" 
+              href="tel:+27683035963" 
               className="mobile-phone"
               onClick={() => setIsMenuOpen(false)}
             >

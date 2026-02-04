@@ -112,15 +112,15 @@ const Footer = () => {
 
             <div className="contact-item">
               <div className="contact-icon">📞</div>
-              <a href="tel:+27311234567" className="contact-link">
-                +27 31 123 4567
+              <a href="tel:+27683035963" className="contact-link">
+                 +27 68 303 5963
               </a>
             </div>
 
             <div className="contact-item">
               <div className="contact-icon">💬</div>
               <a
-                href="https://wa.me/27311234567"
+                href="https://wa.me/27683035963"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="contact-link"
