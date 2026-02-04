@@ -82,3 +82,13 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+/* Fix anchor scroll offset for sticky header */
+section {
+  scroll-margin-top: 75px;
+}
+
+@media (max-width: 480px) {
+  section {
+    scroll-margin-top: 70px;
+  }
+}

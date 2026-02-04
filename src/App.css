@@ -99,3 +99,13 @@ button:focus-visible {
 html {
   scroll-behavior: smooth;
 }
+/* Fix anchor scroll offset for sticky header */
+section {
+  scroll-margin-top: 75px;
+}
+
+@media (max-width: 480px) {
+  section {
+    scroll-margin-top: 70px;
+  }
+}
