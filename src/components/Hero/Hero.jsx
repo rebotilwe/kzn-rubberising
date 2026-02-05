@@ -1,4 +1,4 @@
-// Hero.jsx
+// Hero.jsx - CLEAN MODERN VERSION
 import "./Hero.css";
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
@@ -28,34 +28,31 @@ const Hero = () => {
 
   return (
     <section className="hero" id="home">
-      {/* Animated Background Elements */}
-      <div className="hero-bg-elements">
-        <div className="floating-shape shape-1"></div>
-        <div className="floating-shape shape-2"></div>
-        <div className="floating-shape shape-3"></div>
-      </div>
-
       <motion.div
         className="hero-content"
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
       >
+        {/* MAIN HEADING - NO SPANS */}
         <h1>
-          Professional <span className="highlight">Bin-Lining</span> <br />
-          & <span className="highlight">Rubberising</span> Services
+          Professional Bin-Lining <br />
+          & Rubberising Services
         </h1>
 
+        {/* TYPEWRITER */}
         <div className="typewriter-container">
           <h2 className="typewriter-text">{text}</h2>
           <span className="cursor">|</span>
         </div>
 
+        {/* DESCRIPTION */}
         <p className="hero-description">
           Protecting your assets with durable, waterproof, and reliable solutions
           across KwaZulu-Natal.
         </p>
 
+        {/* BUTTONS */}
         <div className="hero-buttons">
           <a href="#contact" className="btn-primary">
             Get a Quote
@@ -65,7 +62,7 @@ const Hero = () => {
           </a>
         </div>
 
-        {/* Stats Preview */}
+        {/* STATS */}
         <div className="hero-stats">
           {[
             { number: "500+", label: "Projects" },

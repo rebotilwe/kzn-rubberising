@@ -1,4 +1,4 @@
-// About.jsx
+// About.jsx - CLEAN MODERN VERSION
 import "./About.css";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
@@ -21,19 +21,17 @@ const About = () => {
         >
           <div className="section-header">
             <span className="section-subtitle">Who We Are</span>
-            <h2>About <span className="highlight">KZN Rubberising</span></h2>
-            <div className="title-underline"></div>
+            {/* 🔥 REMOVED highlight span */}
+            <h2>About KZN Rubberising</h2>
+            {/* 🔥 REMOVED title-underline */}
           </div>
 
           <p className="about-description">
             KZN Rubberising is a professional service provider specializing in 
-            <span className="highlight-text"> bin-lining</span>, 
-            <span className="highlight-text"> rubberising</span>, and 
-            <span className="highlight-text"> surface protection solutions </span> 
+            {/* 🔥 REMOVED highlight-text spans */}
+            bin-lining, rubberising, and surface protection solutions 
             for industrial, commercial, and residential clients across KwaZulu-Natal.
           </p>
-
-          {/* made space */}
 
           <p className="about-mission">
             Our mission is to deliver <strong>durable, waterproof, and long-lasting </strong> 
@@ -84,7 +82,8 @@ const About = () => {
           transition={{ duration: 0.8, delay: 0.2 }}
         >
           <div className="stats-header">
-            <h3>Our <span className="highlight">Track Record</span></h3>
+            {/* 🔥 REMOVED highlight span */}
+            <h3>Our Track Record</h3>
             <p>Proven results across KwaZulu-Natal</p>
           </div>
 
@@ -95,7 +94,7 @@ const About = () => {
               transition={{ type: "spring", stiffness: 300 }}
             >
               <div className="stat-icon">📅</div>
-              <h3 className="stat-number" data-count="10">0</h3>
+              <h3 className="stat-number">10+</h3>
               <p className="stat-label">Years Experience</p>
             </motion.div>
 
@@ -105,7 +104,7 @@ const About = () => {
               transition={{ type: "spring", stiffness: 300 }}
             >
               <div className="stat-icon">✅</div>
-              <h3 className="stat-number" data-count="500">0</h3>
+              <h3 className="stat-number">500+</h3>
               <p className="stat-label">Projects Completed</p>
             </motion.div>
 
@@ -115,7 +114,7 @@ const About = () => {
               transition={{ type: "spring", stiffness: 300 }}
             >
               <div className="stat-icon">😊</div>
-              <h3 className="stat-number" data-count="50">0</h3>
+              <h3 className="stat-number">50+</h3>
               <p className="stat-label">Happy Clients</p>
             </motion.div>
 

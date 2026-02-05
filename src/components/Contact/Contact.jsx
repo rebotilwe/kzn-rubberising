@@ -1,4 +1,4 @@
-// Contact.jsx
+// Contact.jsx - CLEAN MODERN VERSION
 import "./Contact.css";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
@@ -38,38 +38,37 @@ const Contact = () => {
     });
   };
 
- // Real form submission example (using Formspree)
-const handleSubmit = async (e) => {
-  e.preventDefault();
-  setIsSubmitting(true);
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
 
-  try {
-    const response = await fetch('https://formspree.io/f/YOUR_FORM_ID', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(formData),
-    });
-
-    if (response.ok) {
-      setIsSubmitted(true);
-      setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        service: '',
-        message: ''
+    try {
+      const response = await fetch('https://formspree.io/f/YOUR_FORM_ID', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
       });
-    } else {
-      throw new Error('Form submission failed');
+
+      if (response.ok) {
+        setIsSubmitted(true);
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          service: '',
+          message: ''
+        });
+      } else {
+        throw new Error('Form submission failed');
+      }
+    } catch (error) {
+      alert('There was an error submitting the form. Please try again.');
+    } finally {
+      setIsSubmitting(false);
     }
-  } catch (error) {
-    alert('There was an error submitting the form. Please try again.');
-  } finally {
-    setIsSubmitting(false);
-  }
-};
+  };
 
   return (
     <section className="contact" id="contact" ref={ref}>
@@ -83,8 +82,9 @@ const handleSubmit = async (e) => {
         >
           <div className="info-header">
             <span className="section-subtitle">Get in Touch</span>
-            <h2>Request Your <span className="highlight">Free Quote</span></h2>
-            <div className="title-underline"></div>
+            {/* 🔥 REMOVED highlight span */}
+            <h2>Request Your Free Quote</h2>
+            {/* 🔥 REMOVED title-underline */}
           </div>
 
           <p className="info-description">
@@ -133,19 +133,18 @@ const handleSubmit = async (e) => {
             </div>
           </div>
 
-          {/* Emergency Contact */}
           <div className="emergency-contact">
             <h4 className="emergency-title">🚨 Emergency Service?</h4>
             <p className="emergency-text">
               We offer 24/7 emergency services for urgent protection needs.
             </p>
             <a href="tel:+27683035963" className="btn-emergency">
-              📞 Call Now:  +27 68 303 5963
+              📞 Call Now: +27 68 303 5963
             </a>
           </div>
         </motion.div>
 
-        {/* Form */}
+        {/* Form - UNCHANGED (already clean) */}
         <motion.div
           className="contact-form-container"
           initial={{ opacity: 0, x: 40 }}
