@@ -1,7 +1,9 @@
 :root {
-  --light-blue: #e6f4ff;
-  --dark-blue: #003366;
-  --red: #e63946;
-  --text-dark: #222;
-  --white: #fff;
+  /* Brand Colors - KZN Rubberising */
+  --primary-orange: #ff6a00;   /* Burnt Orange */
+  --dark-black: #000000;       /* Black */
+  --soft-black: #1a1a1a;       /* Slightly lighter black */
+  --white: #ffffff;           /* White */
+  --light-gray: #f5f5f5;       /* Section backgrounds */
+  --text-dark: #111111;        /* Main text */
 }

@@ -1,59 +1,76 @@
-// Footer.jsx
 import "./Footer.css";
 import { motion } from "framer-motion";
+import Logo from "../../assets/images/logo1.png";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
+  
+  const socialIcons = [
+    { icon: '📘', label: 'Facebook', url: '#' },
+    { icon: '💼', label: 'LinkedIn', url: '#' },
+    { icon: '📸', label: 'Instagram', url: '#' },
+  ];
 
   return (
     <footer className="footer">
       <div className="footer-container">
+
+        {/* Logo Section */}
+        <motion.div 
+          className="footer-logo"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+        >
+          <a href="#home" className="logo">
+            <img 
+              src={Logo} 
+              alt="KZN Rubberising Logo"
+              className="logo-icon"
+            />
+            <div className="logo-text">
+              <span className="logo-primary">KZN</span>
+              <span className="logo-accent">Rubberising</span>
+            </div>
+          </a>
+        </motion.div>
 
         {/* Brand Section */}
         <motion.div 
           className="footer-brand"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.6, delay: 0.1 }}
         >
-          <div className="logo">
-            <div className="logo-icon">🛡️</div>
-            <div className="logo-text">
-              <span className="logo-primary">KZN</span>
-              <span className="logo-accent">Rubberising</span>
-            </div>
-          </div>
-
           <p className="brand-tagline">
-            Professional protection solutions for industrial & commercial applications.
+            Professional protection solutions for industrial & commercial applications across KwaZulu-Natal.
           </p>
 
           {/* Social Icons */}
           <div className="social-icons">
-            {['📘', '💼', '📸'].map((icon, index) => (
+            {socialIcons.map((social, index) => (
               <motion.a
                 key={index}
-                href="#"
+                href={social.url}
                 className="social-icon"
+                aria-label={social.label}
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.95 }}
               >
-                {icon}
+                {social.icon}
               </motion.a>
             ))}
           </div>
         </motion.div>
-
 
         {/* Services */}
         <motion.div 
           className="footer-links"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.1 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
         >
           <h4 className="links-title">Core Services</h4>
-
           <ul className="links-list">
             {[
               "Bin-Lining Solutions",
@@ -71,16 +88,14 @@ const Footer = () => {
           </ul>
         </motion.div>
 
-
         {/* Industries */}
         <motion.div 
           className="footer-links"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
         >
           <h4 className="links-title">Key Industries</h4>
-
           <ul className="links-list">
             {[
               "Warehouses",
@@ -98,22 +113,19 @@ const Footer = () => {
           </ul>
         </motion.div>
 
-
         {/* Contact */}
         <motion.div 
           className="footer-contact"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.3 }}
+          transition={{ duration: 0.6, delay: 0.4 }}
         >
           <h4 className="contact-title">Contact</h4>
-
           <div className="contact-details">
-
             <div className="contact-item">
               <div className="contact-icon">📞</div>
               <a href="tel:+27683035963" className="contact-link">
-                 +27 68 303 5963
+                +27 68 303 5963
               </a>
             </div>
 
@@ -142,27 +154,31 @@ const Footer = () => {
             <div className="contact-item">
               <div className="contact-icon">📍</div>
               <span className="contact-text">
-                Durban, KZN
+                Durban, KwaZulu-Natal
               </span>
             </div>
 
+            <div className="contact-item">
+              <div className="contact-icon">🕒</div>
+              <span className="contact-text">
+                Mon-Fri: 7AM - 5PM
+                <br />
+                Sat: 8AM - 1PM
+              </span>
+            </div>
           </div>
 
-          {/* Emergency */}
           <div className="emergency-note">
             <span className="emergency-icon">⚡</span>
-            <span>24/7 Emergency Service</span>
+            <span>24/7 Emergency Service Available</span>
           </div>
-
         </motion.div>
 
       </div>
 
-
       {/* Bottom Bar */}
       <div className="footer-bottom">
         <div className="bottom-container">
-
           <div className="copyright">
             © {currentYear} KZN Rubberising. All rights reserved.
             <br />
@@ -175,8 +191,13 @@ const Footer = () => {
             >
               Afribiz Connect
             </a>
+            
+            <div className="legal-links">
+              <a href="/privacy" className="legal-link">Privacy Policy</a>
+              <span className="separator">|</span>
+              <a href="/terms" className="legal-link">Terms of Service</a>
+            </div>
           </div>
-
 
           <motion.div 
             className="back-to-top"
@@ -189,10 +210,8 @@ const Footer = () => {
             <span className="back-text">Back to top</span>
             <span className="arrow-up">↑</span>
           </motion.div>
-
         </div>
       </div>
-
     </footer>
   );
 };

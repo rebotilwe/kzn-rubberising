@@ -1,113 +1,134 @@
-// Header.jsx - Improved Version
+import React, { useState, useEffect } from "react";
 import "./Header.css";
-import { useState } from "react";
+import logo from "../../assets/images/logo1.png";
 
 const Header = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const [menuActive, setMenuActive] = useState(false);
 
   // WhatsApp message template
   const whatsappMessage = `Hello KZN Rubberising! I'm interested in your services. Please contact me.`;
   const whatsappLink = `https://wa.me/27683035963?text=${encodeURIComponent(whatsappMessage)}`;
 
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
+  // Sticky header on scroll
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 50);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  // Smooth scroll for links (only for navigation links)
+  useEffect(() => {
+    const links = document.querySelectorAll(".nav-link, .mobile-link");
+    const headerHeight = 85;
+    links.forEach((link) => {
+      const handleClick = (e) => {
+        e.preventDefault();
+        const targetId = link.getAttribute("href").slice(1);
+        const target = document.getElementById(targetId);
+        if (!target) return;
+        const offsetTop = target.getBoundingClientRect().top + window.scrollY - headerHeight;
+        window.scrollTo({ top: offsetTop, behavior: "smooth" });
+        setMenuActive(false); // close mobile menu
+      };
+      link.addEventListener("click", handleClick);
+      return () => link.removeEventListener("click", handleClick);
+    });
+  }, []);
 
   return (
-    <header className="header">
+    <header className={`header ${scrolled ? "scrolled" : ""}`}>
       <div className="nav-container">
-        {/* Logo / Brand */}
-        <a href="#home" className="logo">
-          <div className="logo-icon">🛡️</div>
+        <a href="#hero" className="logo">
+          <img src={logo} alt="Logo" className="logo-icon" />
           <div className="logo-text">
             <span className="logo-kzn">KZN</span>
             <span className="logo-rubberising">Rubberising</span>
           </div>
         </a>
 
-        {/* Desktop Navigation */}
+        {/* Desktop Nav */}
         <nav className="nav-links">
-          <a href="#home" className="nav-link">Home</a>
-          <a href="#services" className="nav-link">Services</a>
           <a href="#about" className="nav-link">About</a>
-
-          {/* Contact Buttons Container */}
+          <a href="#services" className="nav-link">Services</a>
+          <a href="#contact" className="nav-link">Contact</a>
+          
+          {/* Desktop Contact Buttons */}
           <div className="contact-buttons">
-            {/* Phone */}
-            <a 
-              href="tel:+27683035963" 
-              className="nav-phone"
-              aria-label="Call us"
-            >
+            <a href="tel:+27683035963" className="nav-phone">
               <span className="btn-icon">📞</span>
               <span className="btn-text">Call</span>
             </a>
-
-            {/* WhatsApp */}
-            <a
-              href={whatsappLink}
-              target="_blank"
-              rel="noopener noreferrer"
+            <a 
+              href={whatsappLink} 
+              target="_blank" 
+              rel="noopener noreferrer" 
               className="nav-whatsapp"
-              aria-label="Chat on WhatsApp"
             >
               <span className="btn-icon">💬</span>
               <span className="btn-text">WhatsApp</span>
             </a>
-
-            {/* Get Quote */}
-            <a href="#contact" className="btn-nav">
-              Get Quote
-            </a>
           </div>
         </nav>
 
-        {/* Mobile Menu Button */}
-        <button 
-          className={`mobile-menu-btn ${isMenuOpen ? 'active' : ''}`}
-          onClick={toggleMenu}
+        {/* Hamburger Button */}
+        <button
+          className={`mobile-menu-btn ${menuActive ? "active" : ""}`}
+          onClick={() => setMenuActive(!menuActive)}
           aria-label="Toggle menu"
+          aria-expanded={menuActive}
         >
           <span></span>
           <span></span>
           <span></span>
         </button>
+      </div>
 
-        {/* Mobile Menu */}
-        <div className={`mobile-menu ${isMenuOpen ? 'active' : ''}`}>
-          <a href="#home" className="mobile-link" onClick={() => setIsMenuOpen(false)}>Home</a>
-          <a href="#services" className="mobile-link" onClick={() => setIsMenuOpen(false)}>Services</a>
-          <a href="#about" className="mobile-link" onClick={() => setIsMenuOpen(false)}>About</a>
-          
-          <div className="mobile-contact-buttons">
-            <a 
-              href="tel:+27683035963" 
-              className="mobile-phone"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              <span className="mobile-icon">📞</span>
-              Call Us
-            </a>
-            <a
-              href={whatsappLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mobile-whatsapp"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              <span className="mobile-icon">💬</span>
-              WhatsApp
-            </a>
-            <a 
-              href="#contact" 
-              className="mobile-quote"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Get Quote
-            </a>
-          </div>
+      {/* Mobile Menu - ONLY NAVIGATION LINKS */}
+      <div className={`mobile-menu ${menuActive ? "active" : ""}`}>
+        {/* Navigation Links Only */}
+        <div className="mobile-nav-links">
+          <a href="#about" className="mobile-link" onClick={() => setMenuActive(false)}>
+            About
+          </a>
+          <a href="#services" className="mobile-link" onClick={() => setMenuActive(false)}>
+            Services
+          </a>
+          <a href="#contact" className="mobile-link" onClick={() => setMenuActive(false)}>
+            Contact
+          </a>
+        </div>
+
+        {/* Icon-Only Contact Buttons */}
+        <div className="mobile-contact-icons">
+          <a 
+            href="tel:+27683035963" 
+            className="mobile-icon-btn mobile-icon-phone"
+            aria-label="Call us"
+            onClick={() => setMenuActive(false)}
+          >
+            <span className="icon">📞</span>
+          </a>
+          <a 
+            href={whatsappLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mobile-icon-btn mobile-icon-whatsapp"
+            aria-label="Chat on WhatsApp"
+            onClick={() => setMenuActive(false)}
+          >
+            <span className="icon">💬</span>
+          </a>
         </div>
       </div>
+
+      {/* Overlay to close menu when clicking outside */}
+      {menuActive && (
+        <div 
+          className="menu-overlay" 
+          onClick={() => setMenuActive(false)}
+        />
+      )}
     </header>
   );
 };
