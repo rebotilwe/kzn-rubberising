@@ -60,8 +60,8 @@
 }
 
 .logo-icon {
-  width: 85px;
-  height: 75px;
+  width: 95px;
+  height: 85px;
   object-fit: contain;
   filter: drop-shadow(0 8px 25px rgba(204,85,0,0.4));
   border-radius: 12px;
