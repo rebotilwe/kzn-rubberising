@@ -4,11 +4,11 @@ import Logo from "../../assets/images/logo1.png";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
-  
+
   const socialIcons = [
-    { icon: '📘', label: 'Facebook', url: '#' },
-    { icon: '💼', label: 'LinkedIn', url: '#' },
-    { icon: '📸', label: 'Instagram', url: '#' },
+    { icon: "📘", label: "Facebook", url: "#" },
+    { icon: "💼", label: "LinkedIn", url: "#" },
+    { icon: "📸", label: "Instagram", url: "#" },
   ];
 
   return (
@@ -16,15 +16,15 @@ const Footer = () => {
       <div className="footer-container">
 
         {/* Logo Section */}
-        <motion.div 
+        <motion.div
           className="footer-logo"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
           <a href="#home" className="logo">
-            <img 
-              src={Logo} 
+            <img
+              src={Logo}
               alt="KZN Rubberising Logo"
               className="logo-icon"
             />
@@ -36,7 +36,7 @@ const Footer = () => {
         </motion.div>
 
         {/* Brand Section */}
-        <motion.div 
+        <motion.div
           className="footer-brand"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -64,19 +64,20 @@ const Footer = () => {
         </motion.div>
 
         {/* Services */}
-        <motion.div 
+        <motion.div
           className="footer-links"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
           <h4 className="links-title">Core Services</h4>
+
           <ul className="links-list">
             {[
               "Bin-Lining Solutions",
-              "Rubberising Services", 
+              "Rubberising Services",
               "Industrial Flooring",
-              "Maintenance Contracts"
+              "Maintenance Contracts",
             ].map((service) => (
               <li key={service}>
                 <a href="#services" className="footer-link">
@@ -89,19 +90,20 @@ const Footer = () => {
         </motion.div>
 
         {/* Industries */}
-        <motion.div 
+        <motion.div
           className="footer-links"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}
         >
           <h4 className="links-title">Key Industries</h4>
+
           <ul className="links-list">
             {[
               "Warehouses",
               "Construction",
               "Property Management",
-              "Municipalities"
+              "Municipalities",
             ].map((industry) => (
               <li key={industry}>
                 <a href="#industries" className="footer-link">
@@ -114,14 +116,17 @@ const Footer = () => {
         </motion.div>
 
         {/* Contact */}
-        <motion.div 
+        <motion.div
           className="footer-contact"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
         >
           <h4 className="contact-title">Contact</h4>
+
           <div className="contact-details">
+
+            {/* Phone 1 */}
             <div className="contact-item">
               <div className="contact-icon">📞</div>
               <a href="tel:+27683035963" className="contact-link">
@@ -129,6 +134,15 @@ const Footer = () => {
               </a>
             </div>
 
+            {/* Phone 2 */}
+            <div className="contact-item">
+              <div className="contact-icon">📞</div>
+              <a href="tel:+27813142095" className="contact-link">
+                +27 81 314 2095
+              </a>
+            </div>
+
+            {/* WhatsApp */}
             <div className="contact-item">
               <div className="contact-icon">💬</div>
               <a
@@ -141,6 +155,7 @@ const Footer = () => {
               </a>
             </div>
 
+            {/* Email */}
             <div className="contact-item">
               <div className="contact-icon">✉️</div>
               <a
@@ -151,6 +166,7 @@ const Footer = () => {
               </a>
             </div>
 
+            {/* Location */}
             <div className="contact-item">
               <div className="contact-icon">📍</div>
               <span className="contact-text">
@@ -158,6 +174,7 @@ const Footer = () => {
               </span>
             </div>
 
+            {/* Working Hours */}
             <div className="contact-item">
               <div className="contact-icon">🕒</div>
               <span className="contact-text">
@@ -166,8 +183,10 @@ const Footer = () => {
                 Sat: 8AM - 1PM
               </span>
             </div>
+
           </div>
 
+          {/* Emergency Note */}
           <div className="emergency-note">
             <span className="emergency-icon">⚡</span>
             <span>24/7 Emergency Service Available</span>
@@ -179,9 +198,11 @@ const Footer = () => {
       {/* Bottom Bar */}
       <div className="footer-bottom">
         <div className="bottom-container">
+
           <div className="copyright">
             © {currentYear} KZN Rubberising. All rights reserved.
             <br />
+
             Developed by{" "}
             <a
               href="https://afribizconnect.co.za/"
@@ -191,7 +212,7 @@ const Footer = () => {
             >
               Afribiz Connect
             </a>
-            
+
             <div className="legal-links">
               <a href="/privacy" className="legal-link">Privacy Policy</a>
               <span className="separator">|</span>
@@ -199,7 +220,7 @@ const Footer = () => {
             </div>
           </div>
 
-          <motion.div 
+          <motion.div
             className="back-to-top"
             onClick={() =>
               window.scrollTo({ top: 0, behavior: "smooth" })
@@ -210,6 +231,7 @@ const Footer = () => {
             <span className="back-text">Back to top</span>
             <span className="arrow-up">↑</span>
           </motion.div>
+
         </div>
       </div>
     </footer>
