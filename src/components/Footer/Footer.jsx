@@ -25,12 +25,12 @@ const Footer = () => {
           <a href="#home" className="logo">
             <img
               src={Logo}
-              alt="KZN Rubberising Logo"
+              alt="KZN Rubber Logo"
               className="logo-icon"
             />
             <div className="logo-text">
               <span className="logo-primary">KZN</span>
-              <span className="logo-accent">Rubberising</span>
+              <span className="logo-accent">Rubber</span>
             </div>
           </a>
         </motion.div>
@@ -159,10 +159,10 @@ const Footer = () => {
             <div className="contact-item">
               <div className="contact-icon">✉️</div>
               <a
-                href="mailto:info@kznrubberising.co.za"
+                href="mailto:info@kznrubber.co.za"
                 className="contact-link"
               >
-                info@kznrubberising.co.za
+                info@kznrubber.co.za
               </a>
             </div>
 
@@ -200,7 +200,7 @@ const Footer = () => {
         <div className="bottom-container">
 
           <div className="copyright">
-            © {currentYear} KZN Rubberising. All rights reserved.
+            © {currentYear} KZN Rubber. All rights reserved.
             <br />
 
             Developed by{" "}

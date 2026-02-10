@@ -118,10 +118,10 @@ const Contact = () => {
               <div>
                 <h4>Email Us</h4>
                 <a
-                  href="mailto:info@kznrubberising.co.za"
+                  href="mailto:info@kznrubber.co.za"
                   className="detail-link"
                 >
-                  info@kznrubberising.co.za
+                  info@kznrubber.co.za
                 </a>
               </div>
             </div>
