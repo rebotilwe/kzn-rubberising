@@ -22,12 +22,12 @@ const About = () => {
           <div className="section-header">
             <span className="section-subtitle">Who We Are</span>
             {/* 🔥 REMOVED highlight span */}
-            <h2>About KZN Rubber</h2>
+            <h2>About True Seal Rubberising</h2>
             {/* 🔥 REMOVED title-underline */}
           </div>
 
           <p className="about-description">
-            KZN Rubber is a professional service provider specializing in 
+            True Seal Rubberising is a professional service provider specializing in 
             {/* 🔥 REMOVED highlight-text spans */}
             bin-lining, rubberising, and surface protection solutions 
             for industrial, commercial, and residential clients across KwaZulu-Natal.

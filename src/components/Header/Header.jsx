@@ -7,7 +7,7 @@ const Header = () => {
   const [menuActive, setMenuActive] = useState(false);
 
   // WhatsApp message template
-  const whatsappMessage = `Hello KZN Rubber! I'm interested in your services. Please contact me.`;
+  const whatsappMessage = `Hello True Seal Rubberising! I'm interested in your services. Please contact me.`;
   const whatsappLink = `https://wa.me/27683035963?text=${encodeURIComponent(whatsappMessage)}`;
 
   // Sticky header on scroll
@@ -42,8 +42,8 @@ const Header = () => {
         <a href="#hero" className="logo">
           <img src={logo} alt="Logo" className="logo-icon" />
           <div className="logo-text">
-            <span className="logo-kzn">KZN</span>
-            <span className="logo-rubberising">Rubber</span>
+            <span className="logo-kzn">True</span>
+            <span className="logo-rubberising">Seal Rubberising</span>
           </div>
         </a>
 

@@ -29,8 +29,8 @@ const Footer = () => {
               className="logo-icon"
             />
             <div className="logo-text">
-              <span className="logo-primary">KZN</span>
-              <span className="logo-accent">Rubber</span>
+              <span className="logo-primary">True</span>
+              <span className="logo-accent">Seal Rubberising</span>
             </div>
           </a>
         </motion.div>
@@ -200,7 +200,7 @@ const Footer = () => {
         <div className="bottom-container">
 
           <div className="copyright">
-            © {currentYear} KZN Rubber. All rights reserved.
+            © {currentYear}True Seal Rubberising. All rights reserved.
             <br />
 
             Developed by{" "}
