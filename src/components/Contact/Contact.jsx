@@ -117,12 +117,22 @@ const Contact = () => {
               <div className="detail-icon">✉️</div>
               <div>
                 <h4>Email Us</h4>
-                <a
-                  href="mailto:info@kznrubber.co.za"
-                  className="detail-link"
-                >
-                  info@kznrubber.co.za
-                </a>
+            <a
+  href="mailto:info@trueseal.co.za"
+  className="detail-link"
+>
+  info@trueseal.co.za
+</a>
+
+<br />
+
+<a
+  href="mailto:accounts@trueseal.co.za"
+  className="detail-link"
+>
+  accounts@trueseal.co.za
+</a>
+
               </div>
             </div>
 

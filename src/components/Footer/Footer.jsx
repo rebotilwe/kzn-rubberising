@@ -158,12 +158,13 @@ const Footer = () => {
             {/* Email */}
             <div className="contact-item">
               <div className="contact-icon">✉️</div>
-              <a
-                href="mailto:info@kznrubber.co.za"
-                className="contact-link"
-              >
-                info@kznrubber.co.za
-              </a>
+                      <a
+  href="mailto:info@trueseal.co.za"
+  className="detail-link"
+>
+  info@trueseal.co.za
+</a>
+
             </div>
 
             {/* Location */}
