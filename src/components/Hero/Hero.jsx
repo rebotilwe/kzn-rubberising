@@ -1,4 +1,4 @@
-// Hero.jsx - CLEAN MODERN VERSION
+// Hero.jsx - UPDATED (removed 24/7 from stats)
 import "./Hero.css";
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
@@ -34,25 +34,21 @@ const Hero = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
       >
-        {/* MAIN HEADING - NO SPANS */}
         <h1>
           Professional Bin-Lining <br />
-          & Rubberising Services
+          & Polyurea Rubberising
         </h1>
 
-        {/* TYPEWRITER */}
         <div className="typewriter-container">
           <h2 className="typewriter-text">{text}</h2>
           <span className="cursor">|</span>
         </div>
 
-        {/* DESCRIPTION */}
         <p className="hero-description">
-          Protecting your assets with durable, waterproof, and reliable solutions
-          across KwaZulu-Natal.
+          Advanced polyurethane corrosion control coatings and rubberising solutions 
+          for industrial, commercial, and residential applications across KwaZulu-Natal.
         </p>
 
-        {/* BUTTONS */}
         <div className="hero-buttons">
           <a href="#contact" className="btn-primary">
             Get a Quote
@@ -62,13 +58,12 @@ const Hero = () => {
           </a>
         </div>
 
-        {/* STATS */}
         <div className="hero-stats">
           {[
             { number: "500+", label: "Projects" },
             { number: "50+", label: "Clients" },
             { number: "10+", label: "Years Exp" },
-            { number: "24/7", label: "Support" }
+            { number: "5,200", label: "PSI Strength" } // Replaced 24/7 with tensile strength
           ].map((stat, index) => (
             <div key={index} className="stat-item">
               <div className="stat-number">{stat.number}</div>

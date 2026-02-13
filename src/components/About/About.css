@@ -51,6 +51,7 @@
 
 .section-header {
   margin-bottom: 2.5rem;
+   text-align: center;
 }
 
 .section-subtitle {
@@ -68,6 +69,7 @@
   backdrop-filter: blur(20px);
   box-shadow: 0 8px 25px rgba(204, 85, 0, 0.15);
   transition: all 0.4s ease;
+    margin: 0 auto 1rem auto;
 }
 
 .section-subtitle:hover {
@@ -340,4 +342,14 @@
 /* Reduced Motion */
 @media (prefers-reduced-motion: reduce) {
   * { transition: none !important; animation: none !important; }
+}
+/* Add to About.css - stat-method styling */
+.stat-method {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--white-75);
+  margin-top: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  opacity: 0.8;
 }

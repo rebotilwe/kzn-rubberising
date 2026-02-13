@@ -165,9 +165,10 @@ const Contact = () => {
           <div className="emergency-contact">
             <h4 className="emergency-title">🚨 Emergency Service?</h4>
 
-            <p className="emergency-text">
-              We offer 24/7 emergency services for urgent protection needs.
-            </p>
+      <p className="emergency-text">
+  We provide emergency coating services for urgent protection requirements.
+</p>
+
 
             <a href="tel:+27683035963" className="btn-emergency">
               📞 Call Now: +27 68 303 5963

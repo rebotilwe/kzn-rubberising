@@ -188,10 +188,10 @@ const Footer = () => {
           </div>
 
           {/* Emergency Note */}
-          <div className="emergency-note">
+          {/* <div className="emergency-note">
             <span className="emergency-icon">⚡</span>
             <span>24/7 Emergency Service Available</span>
-          </div>
+          </div> */}
         </motion.div>
 
       </div>
